@@ -8,6 +8,7 @@ from animals import cat
 from animals import dog
 from animals import sheep
 from animals import lion
+from animals import leopard
 import animal
 import farm
 
@@ -21,6 +22,8 @@ def make_animal(kind):
         return sheep.Sheep()
     if kind == 'lion':
         return lion.Lion()
+    if kind == 'leopard':
+        return lion.Leopard()
     return animal.Animal(kind)
 
 def main(animals):
