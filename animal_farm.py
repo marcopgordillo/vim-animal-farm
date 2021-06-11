@@ -4,32 +4,35 @@
 
 import sys
 
-from animals import cat
-from animals import dog
 from animals import sheep
 from animals import lion
 from animals import leopard
 from animals import goat
+from animals import cat
+from animals import dog
 import animal
 import farm
 
 def create_animal(kind):
     """Create an animal class."""
     if kind == 'cat':
-        return cat.Cat()
+        result = cat.Cat()
     if kind == 'dog':
-        return dog.Dog()
+        result = dog.Dog()
     if kind == 'sheep':
-        return sheep.Sheep()
+        result = sheep.Sheep()
     if kind == 'lion':
-        return lion.Lion()
+        result = lion.Lion()
     if kind == 'leopard':
-        return lion.Leopard()
+        result = leopard.Leopard()
     if kind == 'goat':
-        return lion.Goat()
-    return animal.Animal(kind)
+        result = goat.Goat()
+    else:
+        result = animal.Animal(kind)
+    return result
 
 def main(animals):
+    """This is the main function"""
     animal_farm = farm.Farm()
     for animal_kind in animals:
         animal_farm.add_animal(create_animal(animal_kind))
